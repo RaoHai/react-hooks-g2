@@ -3,13 +3,13 @@ import { render, act, cleanup } from 'react-testing-library'
 
 export default function testHooks<T>(wrapper: () => T) {
   let hooks: T;
-  function HooksContinuationPlaceholder() {
+  function HooksPlaceholder() {
     hooks = wrapper();
     return <div />;
   }
 
   act(() => {
-    render(<HooksContinuationPlaceholder />);
+    render(<HooksPlaceholder />);
   });
 
   return {
