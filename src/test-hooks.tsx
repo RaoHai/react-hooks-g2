@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, act } from 'react-testing-library'
+import { render, act, cleanup } from 'react-testing-library'
 
 export default function testHooks<T>(wrapper: () => T) {
   let hooks: T;
@@ -20,6 +20,9 @@ export default function testHooks<T>(wrapper: () => T) {
     },
     hooks() {
       return hooks;
+    },
+    unmount() {
+      return cleanup();
     }
   }
 }
