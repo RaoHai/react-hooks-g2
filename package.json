@@ -1,6 +1,6 @@
 {
   "name": "test-hooks",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "",
   "keywords": [ "hooks", "react-hooks", "test"],
   "main": "dist/lib/test-hooks.js",

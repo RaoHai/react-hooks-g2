@@ -9,7 +9,7 @@ const libraryName = 'test-hooks'
 export default {
   input: `src/${libraryName}.tsx`,
   output: [
-    { file: pkg.module, format: 'es', sourcemap: true },
+    { file: pkg.module, format: 'cjs', sourcemap: true },
   ],
   // Indicate here external modules you don't wanna include in your bundle (i.e.: 'lodash')
   external: [],
