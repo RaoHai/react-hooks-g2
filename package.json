@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "description": "",
   "keywords": [],
-  "main": "dist/test-hooks.js",
-  "module": "dist/test-hooks.js",
+  "main": "dist/lib/test-hooks.js",
+  "module": "dist/lib/test-hooks.js",
   "typings": "dist/types/test-hooks.d.ts",
   "files": [
     "dist"
