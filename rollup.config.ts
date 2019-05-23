@@ -4,7 +4,7 @@ import json from 'rollup-plugin-json'
 
 const pkg = require('./package.json')
 
-const libraryName = 'test-hooks'
+const libraryName = 'react-hooks-g2'
 
 export default {
   input: `src/${libraryName}.tsx`,
