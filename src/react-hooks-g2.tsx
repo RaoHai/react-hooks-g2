@@ -10,7 +10,7 @@ export function UseG2<T>({ callback, data }: { callback: Callback, data: T[] }) 
   useEffect(() => {
     const current = ref.current as HTMLDivElement;
     if (!chart) {
-      const newChart = new G2.Chart({
+      const newChart = new (G2.Chart as any)({
         container: current,
         width: current.clientWidth,
         height: current.clientHeight,
