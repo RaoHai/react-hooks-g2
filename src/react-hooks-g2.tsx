@@ -15,6 +15,7 @@ export function UseG2<T>({ callback, data }: { callback: Callback, data: T[] }) 
         width: current.clientWidth,
         height: current.clientHeight,
         padding: 'auto',
+        autoPaddingAppend: 0,
       });
       newChart.source(data);
       callback(newChart);
