@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import G2 from '@antv/g2';
 
-export type Callback = (chart: G2.Chart) => {};
+export type Callback = (chart: G2.Chart) => void;
 
 export function UseG2<T>({ callback, data }: { callback: Callback, data: T[] }) {
   const ref = useRef<HTMLDivElement>(null);
