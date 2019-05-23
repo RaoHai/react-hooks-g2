@@ -1,6 +1,6 @@
 {
   "name": "react-hooks-g2",
-  "version": "1.0.1",
+  "version": "0.0.0-development",
   "description": "",
   "keywords": [
     "hooks",
@@ -126,7 +126,7 @@
     "rollup-plugin-node-resolve": "^3.4.0",
     "rollup-plugin-sourcemaps": "^0.4.2",
     "rollup-plugin-typescript2": "^0.18.0",
-    "semantic-release": "^15.13.3",
+    "semantic-release": "^15.13.12",
     "shelljs": "^0.8.3",
     "travis-deploy-once": "^5.0.9",
     "ts-jest": "^23.10.2",
