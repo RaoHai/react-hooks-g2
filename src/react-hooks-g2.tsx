@@ -22,12 +22,15 @@ export function UseG2<T>({ callback, data }: { callback: Callback, data: T[] }) 
       setChart(newChart);
       newChart.render();
     } else {
+      chart.clear();
       chart.changeData(data);
+      callback(chart);
       chart.render();
     }
 
     return () => {
       chart && chart.destroy();
+      setChart(undefined);
     };
   }, [ data ]);
 
