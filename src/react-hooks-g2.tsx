@@ -3,7 +3,15 @@ import G2 from '@antv/g2';
 
 export type Callback = (chart: G2.Chart) => void;
 
-export function UseG2<T>({ callback, data }: { callback: Callback, data: T[] }) {
+export function UseG2<T>({
+  callback,
+  data,
+  padding = 'auto',
+}: {
+  callback: Callback;
+  data: T[];
+  padding?: string | number | Array<string | number> ;
+}) {
   const ref = useRef<HTMLDivElement>(null);
   const [chart, setChart] = useState<G2.Chart>();
 
@@ -14,7 +22,7 @@ export function UseG2<T>({ callback, data }: { callback: Callback, data: T[] }) 
         container: current,
         width: current.clientWidth,
         height: current.clientHeight,
-        padding: 'auto',
+        padding,
         autoPaddingAppend: 0,
       });
       newChart.source(data);
