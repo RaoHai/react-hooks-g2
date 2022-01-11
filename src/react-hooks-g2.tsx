@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
-import G2 from '@antv/g2';
+import * as React from 'react';
+import * as G2 from '@antv/g2';
 
 export type Callback = (chart: G2.Chart) => void;
 
@@ -12,10 +12,10 @@ export function UseG2<T>({
   data: T[];
   padding?: string | number | Array<string | number> ;
 }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [chart, setChart] = useState<G2.Chart>();
+  const ref = React.useRef<HTMLDivElement>(null);
+  const [chart, setChart] = React.useState<G2.Chart>();
 
-  useEffect(() => {
+  React.useEffect(() => {
     const current = ref.current as HTMLDivElement;
     if (!chart) {
       const newChart = new (G2.Chart as any)({
