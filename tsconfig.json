@@ -2,7 +2,7 @@
   "compilerOptions": {
     "moduleResolution": "node",
     "module": "esnext",
-    "target": "es5",
+    "target": "es6",
     "lib": [
       "es6",
       "dom"
@@ -16,7 +16,6 @@
     "strict": true,
     "declaration": true,
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "declarationDir": "dist/types",
