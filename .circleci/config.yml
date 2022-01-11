@@ -1,0 +1,29 @@
+version: 2.1
+orbs:
+  node: circleci/node@4.5
+jobs:
+  test:
+    executor: node/default
+    steps:
+      - checkout
+      - node/install-packages
+      - run: npm run test:prod
+  release:
+    executor: node/default
+    steps:
+      - checkout
+      - node/install-packages # Install and automatically cache packages
+      # Run optional required steps before releasing
+      # - run: npm run build-script
+      - run: npm run build
+      - run: npx semantic-release
+      
+
+workflows:
+  test_and_release:
+    # Run the test jobs first, then the release only when all the test jobs are successful
+    jobs:
+      - test
+      - release:
+          requires:
+            - test
