@@ -23,12 +23,7 @@ workflows:
   test_and_release:
     # Run the test jobs first, then the release only when all the test jobs are successful
     jobs:
-      - node/test:
-          matrix:
-            parameters:
-              version:
-                - 16.1.0
-                - 14.17.0
+      - test
       - release:
           requires:
-            - node/test
+            - test
