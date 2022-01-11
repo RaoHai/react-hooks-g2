@@ -17,24 +17,26 @@ export function UseG2<T>({
 
   useEffect(() => {
     const current = ref.current as HTMLDivElement;
-    if (!chart) {
-      const newChart = new (G2.Chart as any)({
-        container: current,
-        width: current.clientWidth,
-        height: current.clientHeight,
-        padding,
-        autoPaddingAppend: 0,
-      });
-      newChart.source(data);
-      callback(newChart);
-      setChart(newChart);
-      newChart.render();
-    } else {
-      chart.clear();
-      chart.changeData(data);
-      callback(chart);
-      chart.render();
-    }
+    Promise.resolve(G2).then(ResolvedG2 => {
+      if (!chart) {
+        const newChart = new (ResolvedG2.Chart as any)({
+          container: current,
+          width: current.clientWidth,
+          height: current.clientHeight,
+          padding,
+          autoPaddingAppend: 0,
+        });
+        newChart.source(data);
+        callback(newChart);
+        setChart(newChart);
+        newChart.render();
+      } else {
+        chart.clear();
+        chart.changeData(data);
+        callback(chart);
+        chart.render();
+      }
+    });
 
     return () => {
       chart && chart.destroy();
